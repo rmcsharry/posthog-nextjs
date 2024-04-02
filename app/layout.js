@@ -1,5 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { PHProvider } from './providers'
+import dynamic from 'next/dynamic'
+
+const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
+  ssr: false,
+})
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +17,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <PHProvider>
+        <body className={inter.className}>
+          <PostHogPageView /> 
+          {children}
+        </body>
+      </PHProvider>
     </html>
   );
 }
