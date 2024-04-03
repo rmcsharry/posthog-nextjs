@@ -11,7 +11,9 @@ It is basically a [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 
 ## Getting Started
 
-First, run the development server:
+First you will need to add your PostHog api key and id to .env.local.
+
+Then run the development server:
 
 ```bash
 npm run dev
