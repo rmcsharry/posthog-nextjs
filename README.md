@@ -2,6 +2,11 @@ This is a small demo to see how posthog works in a NextJs app.
 
 posthog.com - a product analytics tool
 
+For example, here we can see in the PostHog dashboard that events are being captured on clicks/navigation events and on the server-side when a page loads:
+
+![Screenshot 2024-04-03 at 14 05 15](https://github.com/rmcsharry/posthog-nextjs/assets/1156100/7e3e8d79-6863-45b9-b094-9f194f72308c)
+
+
 It is basically a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
