@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import PostHogClient from '../posthog'
 
-export default function About() {
+export default async function About() {
+
+  const flags = await getData();
 
   const posthog = PostHogClient()
 
@@ -14,6 +16,17 @@ export default function About() {
     <main>
       <h1>About</h1>
       <Link href="/">Go home</Link>
+      { flags['main-cta'] &&
+        <Link href="http://posthog.com/">Go to PostHog</Link>
+      }
     </main>
   )
+}
+
+async function getData() {
+  const posthog = PostHogClient()
+  const flags = await posthog.getAllFlags(
+    'test@posthog.com' // replace with a user's distinct ID
+  );
+  return flags
 }
